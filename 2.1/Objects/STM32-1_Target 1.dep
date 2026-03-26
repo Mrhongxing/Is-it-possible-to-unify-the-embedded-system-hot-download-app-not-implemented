@@ -1,0 +1,18 @@
+Dependencies for Project 'STM32-1', Target 'Target 1': (DO NOT MODIFY !)
+CompilerVersion: 6160000::V6.16::ARMCLANG
+F (.\start\startup_stm32f10x_md.s)(0x4D783CD2)(--target=arm-arm-none-eabi -mcpu=cortex-m3 -masm=auto -c-gdwarf-4-I"D:/program files/keil/package/Keil/STM32F1xx_DFP/2.2.0/Device/Include"-Wa,armasm,--pd,"__UVISION_VERSION SETA 536" -Wa,armasm,--pd,"STM32F10X_MD SETA 1"-o ./objects/startup_stm32f10x_md.o)
+F (.\start\core_cm3.c)(0x4C0C587E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ./start-I"D:/program files/keil/package/Keil/STM32F1xx_DFP/2.2.0/Device/Include"-D__UVISION_VERSION="536" -DSTM32F10X_MD-o ./objects/core_cm3.o -MD)
+I (D:\program files\keil\ARM\ARMCLANG\include\stdint.h)(0x603507D0)
+F (.\start\system_stm32f10x.c)(0x4D783CB0)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ./start-I"D:/program files/keil/package/Keil/STM32F1xx_DFP/2.2.0/Device/Include"-D__UVISION_VERSION="536" -DSTM32F10X_MD-o ./objects/system_stm32f10x.o -MD)
+I (start\stm32f10x.h)(0x4D783CB4)
+I (start\core_cm3.h)(0x4D523B58)
+I (D:\program files\keil\ARM\ARMCLANG\include\stdint.h)(0x603507D0)
+I (start\system_stm32f10x.h)(0x4D783CAA)
+F (.\start\core_cm3.h)(0x4D523B58)()
+F (.\start\stm32f10x.h)(0x4D783CB4)()
+F (.\start\system_stm32f10x.h)(0x4D783CAA)()
+F (.\main\main.c)(0x69C5139A)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ./start-I"D:/program files/keil/package/Keil/STM32F1xx_DFP/2.2.0/Device/Include"-D__UVISION_VERSION="536" -DSTM32F10X_MD-o ./objects/main.o -MD)
+I (start\stm32f10x.h)(0x4D783CB4)
+I (start\core_cm3.h)(0x4D523B58)
+I (D:\program files\keil\ARM\ARMCLANG\include\stdint.h)(0x603507D0)
+I (start\system_stm32f10x.h)(0x4D783CAA)
