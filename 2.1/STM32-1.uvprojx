@@ -389,6 +389,11 @@
               <FileType>1</FileType>
               <FilePath>.\main\main.c</FilePath>
             </File>
+            <File>
+              <FileName>main2.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\main2.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -693,6 +698,36 @@
               <FileName>Delay.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\delay\Delay.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>LED</GroupName>
+          <Files>
+            <File>
+              <FileName>LED.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\LED.c</FilePath>
+            </File>
+            <File>
+              <FileName>LED.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\LED.h</FilePath>
+            </File>
+            <File>
+              <FileName>OLED.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\OLED.c</FilePath>
+            </File>
+            <File>
+              <FileName>OLED.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\OLED.h</FilePath>
+            </File>
+            <File>
+              <FileName>OLED_Font.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\OLED_Font.h</FilePath>
             </File>
           </Files>
         </Group>

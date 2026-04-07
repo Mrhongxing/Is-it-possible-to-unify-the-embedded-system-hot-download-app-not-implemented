@@ -1,7 +1,7 @@
 #include "stm32f10x.h"
 #include "Delay.h"
 
-int main(void) {
+int mainw() {
     int i = 0;
     int a = 0;
     
