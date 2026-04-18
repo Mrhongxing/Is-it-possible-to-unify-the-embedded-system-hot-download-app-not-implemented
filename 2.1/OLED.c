@@ -134,10 +134,12 @@ void OLED_Clear(void)
 void OLED_ShowChar(uint8_t Line, uint8_t Column, char Char)
 {      	
 	uint8_t i;
+	int a;
 	OLED_SetCursor((Line - 1) * 2, (Column - 1) * 8);		//设置光标位置在上半部分
 	for (i = 0; i < 8; i++)
 	{
-		OLED_WriteData(OLED_F8x16[Char - ' '][i]);			//显示上半部分内容
+		OLED_WriteData(OLED_F8x16[Char - ' '][i]);		//显示上半部分内容
+		a  = OLED_F8x16[Char - ' '][i];
 	}
 	OLED_SetCursor((Line - 1) * 2 + 1, (Column - 1) * 8);	//设置光标位置在下半部分
 	for (i = 0; i < 8; i++)
@@ -318,4 +320,19 @@ void OLED_Init(void)
 	OLED_WriteCommand(0xAF);	//开启显示
 		
 	OLED_Clear();				//OLED清屏
+}
+void OLED_ShowMY(uint8_t Line, uint8_t Column, char Char)
+{      	
+	uint8_t i;
+	OLED_SetCursor((Line - 1) * 2, (Column - 1) * 8);		//设置光标位置在上半部分
+	for (i = 0; i < 8; i++)
+	{
+		OLED_WriteData(OLED_MY[0][i]);		//显示上半部分内容
+		
+	}
+	OLED_SetCursor((Line - 1) * 2 + 1, (Column - 1) * 8);	//设置光标位置在下半部分
+	for (i = 0; i < 8; i++)
+	{
+		OLED_WriteData(OLED_MY[0][i + 8]);		//显示下半部分内容
+	}
 }

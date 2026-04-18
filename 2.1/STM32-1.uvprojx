@@ -731,6 +731,51 @@
             </File>
           </Files>
         </Group>
+        <Group>
+          <GroupName>driver</GroupName>
+          <Files>
+            <File>
+              <FileName>knob.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\knob.c</FilePath>
+            </File>
+            <File>
+              <FileName>knob.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\knob.h</FilePath>
+            </File>
+            <File>
+              <FileName>select.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\select.c</FilePath>
+            </File>
+            <File>
+              <FileName>select.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\select.h</FilePath>
+            </File>
+            <File>
+              <FileName>clc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\clc.c</FilePath>
+            </File>
+            <File>
+              <FileName>clc.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\clc.h</FilePath>
+            </File>
+            <File>
+              <FileName>PWM.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\PWM.h</FilePath>
+            </File>
+            <File>
+              <FileName>PWM.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\PWM.c</FilePath>
+            </File>
+          </Files>
+        </Group>
       </Groups>
     </Target>
   </Targets>
