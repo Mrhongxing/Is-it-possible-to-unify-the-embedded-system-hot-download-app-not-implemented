@@ -1,0 +1,32 @@
+.\objects\knob.o: knob.c
+.\objects\knob.o: .\start\stm32f10x.h
+.\objects\knob.o: .\start\core_cm3.h
+.\objects\knob.o: D:\program files\keil\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\knob.o: .\start\system_stm32f10x.h
+.\objects\knob.o: .\user\stm32f10x_conf.h
+.\objects\knob.o: .\library\stm32f10x_adc.h
+.\objects\knob.o: .\start\stm32f10x.h
+.\objects\knob.o: .\library\stm32f10x_bkp.h
+.\objects\knob.o: .\library\stm32f10x_can.h
+.\objects\knob.o: .\library\stm32f10x_cec.h
+.\objects\knob.o: .\library\stm32f10x_crc.h
+.\objects\knob.o: .\library\stm32f10x_dac.h
+.\objects\knob.o: .\library\stm32f10x_dbgmcu.h
+.\objects\knob.o: .\library\stm32f10x_dma.h
+.\objects\knob.o: .\library\stm32f10x_exti.h
+.\objects\knob.o: .\library\stm32f10x_flash.h
+.\objects\knob.o: .\library\stm32f10x_fsmc.h
+.\objects\knob.o: .\library\stm32f10x_gpio.h
+.\objects\knob.o: .\library\stm32f10x_i2c.h
+.\objects\knob.o: .\library\stm32f10x_iwdg.h
+.\objects\knob.o: .\library\stm32f10x_pwr.h
+.\objects\knob.o: .\library\stm32f10x_rcc.h
+.\objects\knob.o: .\library\stm32f10x_rtc.h
+.\objects\knob.o: .\library\stm32f10x_sdio.h
+.\objects\knob.o: .\library\stm32f10x_spi.h
+.\objects\knob.o: .\library\stm32f10x_tim.h
+.\objects\knob.o: .\library\stm32f10x_usart.h
+.\objects\knob.o: .\library\stm32f10x_wwdg.h
+.\objects\knob.o: .\library\misc.h
+.\objects\knob.o: D:\program files\keil\ARM\ARMCC\Bin\..\include\math.h
+.\objects\knob.o: .\delay\Delay.h
