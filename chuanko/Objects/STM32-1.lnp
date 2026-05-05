@@ -1,6 +1,5 @@
 --cpu Cortex-M3
 ".\objects\main.o"
-".\objects\main2.o"
 ".\objects\stm32f10x_it.o"
 ".\objects\startup_stm32f10x_md.o"
 ".\objects\core_cm3.o"
@@ -29,12 +28,8 @@
 ".\objects\stm32f10x_usart.o"
 ".\objects\stm32f10x_wwdg.o"
 ".\objects\delay.o"
-".\objects\led.o"
 ".\objects\oled.o"
-".\objects\knob.o"
-".\objects\select.o"
-".\objects\clc.o"
-".\objects\pwm.o"
+".\objects\chuanko.o"
 --strict --scatter ".\Objects\STM32-1.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

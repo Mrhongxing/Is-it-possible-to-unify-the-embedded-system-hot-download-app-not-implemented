@@ -21,7 +21,7 @@ void TIM2_IRQHandler(void){
 		TIM_ClearITPendingBit(TIM2,TIM_IT_Update);
 	}
 }
-int main(void){
+int main1(void){
 	
 	GPIO_InitTypeDef GPIO_InitStruct;
 	GPIO_InitStruct.GPIO_Pin = GPIO_Pin_6|GPIO_Pin_7;

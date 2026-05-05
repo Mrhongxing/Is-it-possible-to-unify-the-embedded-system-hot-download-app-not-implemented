@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>.\start;.\start;.\user;.\library;.\delay</IncludePath>
+              <IncludePath>.\start;.\user;.\main;.\library;..\chuanko</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -388,11 +388,6 @@
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\main\main.c</FilePath>
-            </File>
-            <File>
-              <FileName>main2.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\main2.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -705,29 +700,19 @@
           <GroupName>LED</GroupName>
           <Files>
             <File>
-              <FileName>LED.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\LED.c</FilePath>
-            </File>
-            <File>
-              <FileName>LED.h</FileName>
+              <FileName>OLED_Font.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\LED.h</FilePath>
-            </File>
-            <File>
-              <FileName>OLED.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\OLED.c</FilePath>
+              <FilePath>..\2.1\OLED_Font.h</FilePath>
             </File>
             <File>
               <FileName>OLED.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\OLED.h</FilePath>
+              <FilePath>..\2.1\OLED.h</FilePath>
             </File>
             <File>
-              <FileName>OLED_Font.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\OLED_Font.h</FilePath>
+              <FileName>OLED.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\2.1\OLED.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -735,44 +720,14 @@
           <GroupName>driver</GroupName>
           <Files>
             <File>
-              <FileName>knob.c</FileName>
+              <FileName>chuanko.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\knob.c</FilePath>
+              <FilePath>.\chuanko.c</FilePath>
             </File>
             <File>
-              <FileName>knob.h</FileName>
+              <FileName>chuanko.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\knob.h</FilePath>
-            </File>
-            <File>
-              <FileName>select.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\select.c</FilePath>
-            </File>
-            <File>
-              <FileName>select.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\select.h</FilePath>
-            </File>
-            <File>
-              <FileName>clc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\clc.c</FilePath>
-            </File>
-            <File>
-              <FileName>clc.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\clc.h</FilePath>
-            </File>
-            <File>
-              <FileName>PWM.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\PWM.h</FilePath>
-            </File>
-            <File>
-              <FileName>PWM.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\PWM.c</FilePath>
+              <FilePath>.\chuanko.h</FilePath>
             </File>
           </Files>
         </Group>

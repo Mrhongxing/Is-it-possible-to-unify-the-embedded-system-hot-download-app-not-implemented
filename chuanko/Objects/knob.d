@@ -29,4 +29,3 @@
 .\objects\knob.o: .\library\stm32f10x_wwdg.h
 .\objects\knob.o: .\library\misc.h
 .\objects\knob.o: D:\program files\keil\ARM\ARMCC\Bin\..\include\math.h
-.\objects\knob.o: .\delay\Delay.h

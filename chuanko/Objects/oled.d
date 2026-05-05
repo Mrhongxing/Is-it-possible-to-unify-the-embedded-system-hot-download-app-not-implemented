@@ -1,4 +1,4 @@
-.\objects\oled.o: OLED.c
+.\objects\oled.o: ..\2.1\OLED.c
 .\objects\oled.o: .\start\stm32f10x.h
 .\objects\oled.o: .\start\core_cm3.h
 .\objects\oled.o: D:\program files\keil\ARM\ARMCC\Bin\..\include\stdint.h
@@ -28,4 +28,4 @@
 .\objects\oled.o: .\library\stm32f10x_usart.h
 .\objects\oled.o: .\library\stm32f10x_wwdg.h
 .\objects\oled.o: .\library\misc.h
-.\objects\oled.o: OLED_Font.h
+.\objects\oled.o: ..\2.1\OLED_Font.h
