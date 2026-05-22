@@ -29,3 +29,7 @@
 .\objects\main.o: .\library\stm32f10x_wwdg.h
 .\objects\main.o: .\library\misc.h
 .\objects\main.o: ..\chuanko\OLED.h
+.\objects\main.o: D:\program files\keil\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\main.o: .\delay\Delay.h
+.\objects\main.o: ..\chuanko\HTTP.h
+.\objects\main.o: ..\chuanko\CLock.h

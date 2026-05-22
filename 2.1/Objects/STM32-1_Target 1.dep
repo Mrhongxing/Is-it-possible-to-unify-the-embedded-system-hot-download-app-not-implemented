@@ -1,6 +1,6 @@
 Dependencies for Project 'STM32-1', Target 'Target 1': (DO NOT MODIFY !)
 CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
-F (.\main\main.c)(0x69CA3861)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\start -I .\start -I .\user -I .\library -I .\delay-I"D:\program files\keil\package\Keil\STM32F1xx_DFP\2.2.0\Device\Include"-D__UVISION_VERSION="536" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\main\main.c)(0x6A0B02F3)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\start -I .\start -I .\user -I .\library -I .\delay-I"D:\program files\keil\package\Keil\STM32F1xx_DFP\2.2.0\Device\Include"-D__UVISION_VERSION="536" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (.\start\stm32f10x.h)(0x4D783CB4)
 I (.\start\core_cm3.h)(0x4D523B58)
 I (D:\program files\keil\ARM\ARMCC\include\stdint.h)(0x6025237E)
@@ -30,7 +30,7 @@ I (.\library\stm32f10x_usart.h)(0x4D783BB4)
 I (.\library\stm32f10x_wwdg.h)(0x4D783BB4)
 I (.\library\misc.h)(0x4D783BB4)
 I (.\delay\Delay.h)(0x6130920E)
-F (.\main2.c)(0x69E2127B)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\start -I .\start -I .\user -I .\library -I .\delay-I"D:\program files\keil\package\Keil\STM32F1xx_DFP\2.2.0\Device\Include"-D__UVISION_VERSION="536" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\main2.o --omf_browse .\objects\main2.crf --depend .\objects\main2.d)
+F (.\main2.c)(0x6A0B0341)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\start -I .\start -I .\user -I .\library -I .\delay-I"D:\program files\keil\package\Keil\STM32F1xx_DFP\2.2.0\Device\Include"-D__UVISION_VERSION="536" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\main2.o --omf_browse .\objects\main2.crf --depend .\objects\main2.d)
 I (.\start\stm32f10x.h)(0x4D783CB4)
 I (.\start\core_cm3.h)(0x4D523B58)
 I (D:\program files\keil\ARM\ARMCC\include\stdint.h)(0x6025237E)
@@ -61,9 +61,6 @@ I (.\library\stm32f10x_wwdg.h)(0x4D783BB4)
 I (.\library\misc.h)(0x4D783BB4)
 I (.\delay\Delay.h)(0x6130920E)
 I (OLED.h)(0x69DD8822)
-I (knob.h)(0x69DDEA19)
-I (clc.h)(0x69DE4616)
-I (PWM.h)(0x69DEF313)
 F (.\user\stm32f10x_conf.h)(0x4D99A59E)()
 F (.\user\stm32f10x_it.c)(0x4D99A59E)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\start -I .\start -I .\user -I .\library -I .\delay-I"D:\program files\keil\package\Keil\STM32F1xx_DFP\2.2.0\Device\Include"-D__UVISION_VERSION="536" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\stm32f10x_it.o --omf_browse .\objects\stm32f10x_it.crf --depend .\objects\stm32f10x_it.d)
 I (user\stm32f10x_it.h)(0x4D99A59E)
@@ -905,7 +902,7 @@ I (.\library\stm32f10x_usart.h)(0x4D783BB4)
 I (.\library\stm32f10x_wwdg.h)(0x4D783BB4)
 I (.\library\misc.h)(0x4D783BB4)
 F (.\LED.h)(0x69CB62D3)()
-F (.\OLED.c)(0x69DD8EBE)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\start -I .\start -I .\user -I .\library -I .\delay-I"D:\program files\keil\package\Keil\STM32F1xx_DFP\2.2.0\Device\Include"-D__UVISION_VERSION="536" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\oled.o --omf_browse .\objects\oled.crf --depend .\objects\oled.d)
+F (.\OLED.c)(0x6A01A4B3)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\start -I .\start -I .\user -I .\library -I .\delay-I"D:\program files\keil\package\Keil\STM32F1xx_DFP\2.2.0\Device\Include"-D__UVISION_VERSION="536" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\oled.o --omf_browse .\objects\oled.crf --depend .\objects\oled.d)
 I (.\start\stm32f10x.h)(0x4D783CB4)
 I (.\start\core_cm3.h)(0x4D523B58)
 I (D:\program files\keil\ARM\ARMCC\include\stdint.h)(0x6025237E)

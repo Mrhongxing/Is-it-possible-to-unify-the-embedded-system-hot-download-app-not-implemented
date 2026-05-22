@@ -190,7 +190,7 @@
             <hadIRAM2>0</hadIRAM2>
             <hadIROM2>0</hadIROM2>
             <StupSel>8</StupSel>
-            <useUlib>0</useUlib>
+            <useUlib>1</useUlib>
             <EndSel>0</EndSel>
             <uLtcg>0</uLtcg>
             <nSecure>0</nSecure>
@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>.\start;.\user;.\main;.\library;..\chuanko</IncludePath>
+              <IncludePath>.\start;.\user;.\main;.\library;..\chuanko;.\delay</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -720,14 +720,39 @@
           <GroupName>driver</GroupName>
           <Files>
             <File>
-              <FileName>chuanko.c</FileName>
+              <FileName>HTTP.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\chuanko.c</FilePath>
+              <FilePath>.\HTTP.c</FilePath>
             </File>
             <File>
-              <FileName>chuanko.h</FileName>
+              <FileName>HTTP.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\chuanko.h</FilePath>
+              <FilePath>.\HTTP.h</FilePath>
+            </File>
+            <File>
+              <FileName>Hotspot.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Hotspot.h</FilePath>
+            </File>
+            <File>
+              <FileName>Hotspot.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Hotspot.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Clock</GroupName>
+          <Files>
+            <File>
+              <FileName>Clock.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Clock.h</FilePath>
+            </File>
+            <File>
+              <FileName>Clock.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Clock.c</FilePath>
             </File>
           </Files>
         </Group>

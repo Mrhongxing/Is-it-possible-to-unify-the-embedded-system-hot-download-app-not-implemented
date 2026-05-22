@@ -30,6 +30,3 @@
 .\objects\main2.o: .\library\misc.h
 .\objects\main2.o: .\delay\Delay.h
 .\objects\main2.o: OLED.h
-.\objects\main2.o: knob.h
-.\objects\main2.o: clc.h
-.\objects\main2.o: PWM.h
