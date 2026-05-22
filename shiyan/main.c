@@ -36,14 +36,61 @@ void Turn_On_LED(u8 LED_NUM);
 * Output         : None
 * Return         : None
 *******************************************************************************/
+int direction =0;
+int on =0;
+
+void EXTI3_IRQHandler(void){
+	if(EXTI_GetITStatus(EXTI_Line3)!=RESET){
+		Delay(15000);
+		if(GPIO_ReadInputDataBit(GPIOC,GPIO_Pin_3)==0){
+			direction=1;
+		}
+	}
+	while(GPIO_ReadInputDataBit(GPIOC,GPIO_Pin_3)==0);
+	EXTI_ClearITPendingBit(EXTI_Line3);
+}
+
+void EXTI1_IRQHandler(void){
+	if(EXTI_GetITStatus(EXTI_Line1)!=RESET){
+		Delay(15000);
+		if(GPIO_ReadInputDataBit(GPIOA,GPIO_Pin_1)==0){
+			on=1;
+		}
+	}
+	while(GPIO_ReadInputDataBit(GPIOA,GPIO_Pin_1)==0);
+	EXTI_ClearITPendingBit(EXTI_Line1);
+}
+
 int main(void)
 {
 	int i=0;
+	int j=0;
+	EXTI_InitTypeDef exti3;
+	NVIC_InitTypeDef nvic3;
+	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
   	/* 配置神舟王103LED灯使用的GPIO管脚模式*/
   	RCC_APB2PeriphClockCmd(RCC_GPIO_LED|RCC_APB2Periph_GPIOC|RCC_APB2Periph_GPIOA|RCC_APB2Periph_AFIO, ENABLE); /*使能LED灯使用的GPIO时钟*/
 
 	GPIO_EXTILineConfig(GPIO_PortSourceGPIOC,GPIO_PinSource3);
+	GPIO_EXTILineConfig(GPIO_PortSourceGPIOA,GPIO_PinSource1);
 	
+	exti3.EXTI_Line=EXTI_Line3;
+	exti3.EXTI_Mode=EXTI_Mode_Interrupt;
+	exti3.EXTI_Trigger=EXTI_Trigger_Falling;
+	exti3.EXTI_LineCmd=ENABLE;
+	EXTI_Init(&exti3);
+	
+	exti3.EXTI_Line=EXTI_Line1;
+	EXTI_Init(&exti3);
+	
+	nvic3.NVIC_IRQChannel=EXTI3_IRQn;
+	nvic3.NVIC_IRQChannelCmd=ENABLE;
+	nvic3.NVIC_IRQChannelPreemptionPriority=1;
+	nvic3.NVIC_IRQChannelSubPriority=1;
+	NVIC_Init(&nvic3);
+	
+	nvic3.NVIC_IRQChannel=EXTI1_IRQn;
+	NVIC_Init(&nvic3);
 	
   	GPIO_InitStructure.GPIO_Pin = DS1_PIN|DS2_PIN|DS3_PIN|DS4_PIN; 
   	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
@@ -60,12 +107,20 @@ int main(void)
 
   	while(1)
   	{	
-		if(GPIO_ReadInputDataBit(GPIOA,GPIO_Pin_1)==0){
+		if(on==1){
 			if(i==1){i=0;}else{i=1;}
+			on=0;
+			Delay(0x2FFFFF);
+			
+		}
+		if(direction==1){
+			if(j==1){j=0;}else{j=1;}
+			
+			direction=0;
 			Delay(0x2FFFFF);
 		}
 		if(i==1){
-		if(GPIO_ReadInputDataBit(GPIOC,GPIO_Pin_3)==1){
+		if(j==1){
 		GPIO_SetBits(GPIO_LED,DS1_PIN|DS2_PIN|DS3_PIN|DS4_PIN);/*关闭所有的LED指示灯*/
 		Turn_On_LED(count%4);	//点亮一个LED灯		
 		count++;
