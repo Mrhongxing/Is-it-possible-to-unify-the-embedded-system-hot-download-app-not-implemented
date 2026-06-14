@@ -1,0 +1,1 @@
+I’m an undergrad who knows both front-end and back-end. When I got to learning Flash writing, I was thinking, is it possible to treat library functions like GPIO as dependencies or drivers, run software as a hot update by jumping to execute the app, and then control the app’s writing and usage like you would on a Linux command line?
