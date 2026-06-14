@@ -22,15 +22,22 @@ Dialog DLL:      TCM.DLL V1.53.0.0
  
 <h2>Project:</h2>
 D:\github\STM32-try\shiyan\shiyan.uvprojx
-Project File Date:  05/15/2026
+Project File Date:  06/05/2026
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\program files\keil\ARM\ARMCC\Bin'
 Build target 'Target 1'
 compiling main.c...
+main.c(269): warning:  #223-D: function "LCD_DrawChinaChar" declared implicitly
+  		LCD_DrawChinaChar(40, 20 * i, WangChar[i], 0x0000, 0xffff);
+main.c(273): warning:  #223-D: function "LCD_DrawChinaChar" declared implicitly
+  		LCD_DrawChinaChar(100, 20 * i, char_zheng_xian_bo[i], 0x0000, 0xffff);
+main.c(275): warning:  #223-D: function "LCD_DrawChinaChar" declared implicitly
+  	LCD_DrawChinaChar(60, 0, char_tong, 0x0000, 0xffff);
+main.c: 3 warnings, 0 errors
 linking...
-Program Size: Code=2136 RO-data=336 RW-data=16 ZI-data=1632  
-".\Objects\shiyan.axf" - 0 Error(s), 0 Warning(s).
+Program Size: Code=9340 RO-data=7920 RW-data=552 ZI-data=1984  
+".\Objects\shiyan.axf" - 0 Error(s), 3 Warning(s).
 
 <h2>Software Packages used:</h2>
 
