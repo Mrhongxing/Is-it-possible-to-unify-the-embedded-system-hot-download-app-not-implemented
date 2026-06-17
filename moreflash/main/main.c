@@ -1,165 +1,14 @@
-/* #include "stm32f10x.h"
-#include "OLED.h"
-#include "stdio.h"
-#include "Delay.h"
-#include "HTTP.h"
-#include <stdio.h>
-#include "CLock.h" */
-
-/* uint16_t recives[1000];
-GPIO_InitTypeDef GPIOs;
-int number=1;
-int isChanged=0;
-volatile uint32_t timer_ms = 0;
-int timerReLoad=0; */
-
-// 重定向 printf 到哪个串口（根据你的需要选择）
-// 如果要用 USART1 输出调试信息：
-/* int fputc(int ch, FILE *f)
-{
-	// 等待发送完成
-	while(USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET);
-	USART_SendData(USART1, (uint8_t)ch);
-	return ch;
-} */
-
-// 如果需要接收，可以同时实现 fgetc（可选）
-/* int fgetc(FILE *f)
-{
-	while(USART_GetFlagStatus(USART1, USART_FLAG_RXNE) == RESET);
-	return (int)USART_ReceiveData(USART1);
-} */
-/* int main2(void) {
-	int i=0;
-	int s=0;
-	int j=0;
-	int k=0;
-	int h = 0;
-	int a =0;
-	int show=0;
-	char password[100];
-	char name[100];
-	int havewifi=0;
-
-	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB|RCC_APB2Periph_USART1|RCC_APB2Periph_GPIOA,ENABLE);
-	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2,ENABLE);
-
-	GPIO_StructInit(&GPIOs);
-	GPIOs.GPIO_Mode=GPIO_Mode_Out_PP;
-	GPIOs.GPIO_Pin=GPIO_Pin_6|GPIO_Pin_7;
-	GPIOs.GPIO_Speed=GPIO_Speed_50MHz;
-	GPIO_Init(GPIOB,&GPIOs);
-	GPIO_SetBits(GPIOB,GPIO_Pin_7);
-	GPIO_ResetBits(GPIOB,GPIO_Pin_6);
-	GPIOs.GPIO_Pin=GPIO_Pin_12|GPIO_Pin_11;
-	GPIO_Init(GPIOA,&GPIOs);
-	GPIO_SetBits(GPIOA,GPIO_Pin_11);
-	GPIO_ResetBits(GPIOA,GPIO_Pin_12);
-
-	TIM2_Init();
-
-	OLED_Init();
-
-	OLED_ShowString(1,1,"STMOK");
-
-	i=USART1_Init();
-
-	h=USART1_openHotspot();
-
-
-
-	while(1){
-		if(i==1){
-			show=0;
-		}else{
-			OLED_ShowString(2,1,"               ");
-			OLED_ShowString(2,1,"wifiModeError");
-			GPIO_ResetBits(GPIOA,GPIO_Pin_11);
-			Delay_ms(1000);
-			GPIO_SetBits(GPIOA,GPIO_Pin_11);
-			i=USART1_Init();
-			show=1;
-		}
-		if(havewifi==0){
-		if(h==1){
-			show=0;
-			OLED_ShowString(2,1,"OK");
-		}else if(show==0&&h==2){
-			OLED_ShowString(2,1,"               ");
-			OLED_ShowString(2,1,"wifiConfigError");
-			h=USART1_openHotspot();
-			show=1;
-		}else if(show==0){
-			OLED_ShowString(2,1,"               ");
-			OLED_ShowNum(2,1,show,1);
-			h=USART1_openHotspot();
-			show=1;
-		}
-		a=ReadConnectIPD();
-		if(a==1){
-			USART1_sendHTML("HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n<h2>WiFiPZ</h2>\r\n<form action='/config' method='get'>\r\nWiFiMC: <input type='text' name='ssid'><br>\r\nWiFiMM: <input type='password' name='pwd'><br>\r\n<input type='submit' value='LJ'>\r\n</form>\r\n\r\n\r\n");
-		}else if(a==2){
-			readHTML(&name[100],&password[100]);
-			havewifi=1;
-		}
-		}else if(havewifi==1){
-			if(s==1){
-				OLED_ShowString(3,1,"wifiOK");
-			}else{
-				s=USART1_connectToWifi(&name[100],&password[100]);
-			} */
-// j=USART1_connectToServe("192.168.1.21");
-
-// k=USART1_HTTP(2," ");
-//}
-// if(j==1){
-// OLED_ShowString(2,1,"               ");
-// OLED_ShowString(2,1,"Ok");
-// show=0;
-//}else if(show==0){
-// OLED_ShowString(2,1,"               ");
-// OLED_ShowString(2,1,"serveConnectError");
-// show=1;
-//}
-// OLED_ShowString(1,1,"               ");
-// OLED_ShowNum(1,1,timer_ms,6);
-// if(k==1){
-// OLED_ShowString(3,1,"sendOK");
-//}else{
-// OLED_ShowString(3,1,"sendError");
-// j=USART1_connectToServe("192.168.1.21");
-// k=USART1_HTTP(2," ");
-//}
-/* 	}
-} */
-
 #include "stm32f10x.h"
 #include "OLED.h"
 #include "Delay.h"
+#include "Cmd.h"
 
 typedef uint32_t (*func_t)(uint32_t, uint32_t);
 typedef void (*void_func_t)(void);
 
-uint32_t jump(uint32_t addr, uint32_t arg0, uint32_t arg1)
-{
-	addr |= 1;
-	func_t f = (func_t)addr;
-	return f(arg0, arg1);
-}
-
-void void_jump(uint32_t addr)
-{
-	addr |= 1;
-	void_func_t f = (void_func_t)addr;
-	f();
-}
-
-__attribute__((used)) void try()
-{
-	OLED_ShowString(3, 1, "Hello, STM32!");
-}
-
 uint32_t apps[50][3] = {{1, 0x0800F000, 0}};
+uint8_t usart2_rx_buffer[100];
+uint8_t usart2_rx_buffer_index = 0;
 uint8_t app_now = 0;
 uint8_t app_bake[3];
 uint8_t app_temp_now = 0;
@@ -183,14 +32,55 @@ uint16_t tryint[16] = {
     0x0000
 };
 
+void USART2_IRQHandler(void)
+{
+	if (USART_GetITStatus(USART2, USART_IT_RXNE) != RESET)
+	{
+		uint8_t data = USART_ReceiveData(USART2);
+		if(data!=0){
+			usart2_rx_buffer[usart2_rx_buffer_index] = data;
+			usart2_rx_buffer_index++;
+		}
+		USART_ClearITPendingBit(USART2, USART_IT_RXNE);
+	}
+}
+
+__attribute__((used)) uint32_t jump(uint32_t addr, uint32_t arg0, uint32_t arg1)
+{
+	addr |= 1;
+	func_t f = (func_t)addr;
+	return f(arg0, arg1);
+}
+
+__attribute__((used)) void void_jump(uint32_t addr)
+{
+	addr |= 1;
+	void_func_t f = (void_func_t)addr;
+	f();
+}
+
+__attribute__((used)) void try()
+{
+	OLED_ShowString(3, 1, "Hello, STM32!");
+}
+
 int main(void)
 {
 	uint32_t i = 0;
+	uint8_t j = 0;
 	GPIO_InitTypeDef GPIO_InitStruct;
+	USART_InitTypeDef USART_InitStructure;
+	NVIC_InitTypeDef NVIC_InitStructure;
+	
+	// 使能时钟
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB|RCC_APB2Periph_GPIOA, ENABLE);
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_USART2, ENABLE);
+
+	// 配置 NVIC
+	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
+
+	// GPIO配置
 	GPIO_StructInit(&GPIO_InitStruct);
-	// 使能 GPIOB 时钟
-	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
-	// 配置 GPIOB Pin 6 和 Pin 7 为推挽输出
 	GPIO_InitStruct.GPIO_Pin = GPIO_Pin_6;
 	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_Out_PP;
 	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;
@@ -199,24 +89,52 @@ int main(void)
 	GPIO_InitStruct.GPIO_Pin = GPIO_Pin_7;
 	GPIO_Init(GPIOB, &GPIO_InitStruct);
 	GPIO_SetBits(GPIOB, GPIO_Pin_7);
+	GPIO_InitStruct.GPIO_Pin = GPIO_Pin_2;
+	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_AF_PP;
+	GPIO_Init(GPIOA, &GPIO_InitStruct);
+	GPIO_InitStruct.GPIO_Pin = GPIO_Pin_3;
+	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_IN_FLOATING;
+	GPIO_Init(GPIOA, &GPIO_InitStruct);
+
 	// 初始化 OLED 显示屏
 	OLED_Init();
+
+	NVIC_InitStructure.NVIC_IRQChannel = USART2_IRQn;
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 3;
+	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
+	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+	NVIC_Init(&NVIC_InitStructure);
+
+	// USART 配置
+	USART_InitStructure.USART_BaudRate = 115200;
+	USART_InitStructure.USART_WordLength = USART_WordLength_8b;
+	USART_InitStructure.USART_StopBits = USART_StopBits_1;
+	USART_InitStructure.USART_Parity = USART_Parity_No;
+	USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
+	USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
+	USART_Init(USART2, &USART_InitStructure);
+	USART_Cmd(USART2, ENABLE);
+	USART_ITConfig(USART2, USART_IT_RXNE, ENABLE);
+
 	// 配置 Flash 延迟和预取缓冲
 	FLASH_SetLatency(FLASH_Latency_2);
 	FLASH_PrefetchBufferCmd(ENABLE);
 	FLASH_Unlock();
 	FLASH_ClearFlag(FLASH_FLAG_EOP | FLASH_FLAG_PGERR | FLASH_FLAG_WRPRTERR);
 	FLASH_ErasePage(0x0800F000);
-    for(i = 0; i < 16; i++)
+    /* for(i = 0; i < 16; i++)
 	{
 		FLASH_ProgramHalfWord(0x0800F000 + i*2, tryint[i]);
-	}
-	
+	} */
+	FLASH_ProgramWord(0x0800F000, (uint32_t)&jump);
 	FLASH_Lock();
+
 	// 显示欢迎信息
 	OLED_ShowString(1, 1, "Hello, STM32!");
+
 	while (1)
 	{
+		j=read_cmd();
 		if (app_temp_now != app_now)
 		{
 			for (int i = 0; i < 50; i++)
@@ -232,7 +150,7 @@ int main(void)
 		{
 			OLED_ShowString(3, 1, "No app");
 			Delay_ms(1000);
-			void_jump(apps[0][1]);
+			//void_jump(apps[0][1]);
 		}
 	}
 }

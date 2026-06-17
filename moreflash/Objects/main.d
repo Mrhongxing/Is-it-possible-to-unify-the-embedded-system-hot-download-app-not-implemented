@@ -30,3 +30,4 @@
 .\objects\main.o: .\library\misc.h
 .\objects\main.o: ..\moreflash\OLED.h
 .\objects\main.o: .\delay\Delay.h
+.\objects\main.o: ..\moreflash\Cmd.h

@@ -722,6 +722,21 @@
         <Group>
           <GroupName>Clock</GroupName>
         </Group>
+        <Group>
+          <GroupName>Cmd</GroupName>
+          <Files>
+            <File>
+              <FileName>Cmd.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Cmd.c</FilePath>
+            </File>
+            <File>
+              <FileName>Cmd.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Cmd.h</FilePath>
+            </File>
+          </Files>
+        </Group>
       </Groups>
     </Target>
   </Targets>
